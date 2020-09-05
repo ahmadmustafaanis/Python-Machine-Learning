@@ -2,9 +2,8 @@ import numpy as np
 from matplotlib.colors import ListedColormap
 import matplotlib.pyplot as plt 
 
-def plot_decision_region(X_train, X_test,y_train, y_test, classifier, test_idx = None, resolution = 0.02):
-    X = np.vstack((X_train, X_test))
-    y = np.hstack((y_train, y_test))
+def plot_decision_region(X, y, classifier, test_idx = None, resolution = 0.02):
+
     
     #setup marker generator and color map
     markers = ('s','x','o','^','v')
