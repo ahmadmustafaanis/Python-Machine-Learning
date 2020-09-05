@@ -24,9 +24,4 @@ svm = SVC(C=1.0, kernel='linear', random_state=1, verbose=1)
 
 svm.fit(X_train_std, y_train)
 
-plot_decision_region(X_train_std, X_test_std, y_train, y_test, classifier=svm, test_idx=range(105,150))
-
-plt.xlabel("petal Length [Standardized]")
-plt.ylabel("Petal Lenght [Standardized]")
-plt.legend(loc='upper left')
-plt.show()
+print(svm.score())
