@@ -25,9 +25,10 @@ plt.tight_layout()
 plt.show()
 
 #just use 'rbf' kernel instead of linear kernel in sklearn to implement Gaussian Kernel is SVM
-
+gamma = float(input("Type value of Gamma for SVM\n"))
+C = int(input("Type Value of C for SVM\n"))
 from sklearn.svm import SVC 
-svm = SVC(C=10.0, kernel='rbf',gamma=0.10, random_state=1)
+svm = SVC(C=C, kernel='rbf',gamma = gamma, random_state=1)
 
 svm.fit(X_xor, y_xor)
 
