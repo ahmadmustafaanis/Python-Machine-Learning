@@ -25,6 +25,7 @@ class Adaline():
 
     def net_input(self, X):
         return np.dot(X, self.w_[1,:]) + self.w_[0,:]
+        
 
     def activation(self, X):
         return X
@@ -36,12 +37,12 @@ class Adaline():
         self.cost_ = []
 
         for _ in range(self.n_iter):
-            net_input = self.net_input(X)
+            net_input = self.net_input(X) #hp = wx + b
             output = self.activation(net_input)
 
-            errors = y - output
-            self.w_[1,:] += X.T.dot(errors)
-            self.w_[0,:] += errors.sum()  
+            errors = y - output 
+            self.w_[1,:] += X.T.dot(errors) 
+            self.w_[0,:] += errors.sum()   
             cost = (errors**2).sum()/2 
             self.cost_.append(cost)
 
