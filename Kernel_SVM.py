@@ -30,8 +30,7 @@ C = int(input("Type Value of C for SVM\n"))
 from sklearn.svm import SVC 
 svm = SVC(C=C, kernel='rbf',gamma = gamma, random_state=1)
 
-svm.fit(X_xor, y_xor)
-
+svm.fit(X_xor,y_xor)
 plot_decision_region(X_xor, y_xor, classifier=svm)
 plt.tight_layout()
 plt.show()
