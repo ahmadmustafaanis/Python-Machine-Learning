@@ -46,3 +46,5 @@ plt.ylabel('PC 2')
 plt.tight_layout()
 
 plt.show()
+
+print(lr.score(X_test_pca, y_test))
