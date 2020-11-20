@@ -5,6 +5,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 '''
@@ -29,6 +30,23 @@ lda = LDA(n_components=2)
 X_train_lda = lda.fit_transform(X_train_std, y_train)
 X_test_lda = lda.transform(X_test_std)
 
+colors = ['r','b','g']
+
+markers=['s', 'x','o']
+
+
+for l,c,m in zip(np.unique(y_train), colors, markers):
+    plt.scatter(X_train_lda[y_train==l, 0],
+                X_train_lda[y_train==l, 1]* (-1),
+                c=c, label=l, marker=m)
+
+
+plt.xlabel('LD 1')
+plt.ylabel('LD 2')
+plt.legend()
+
+plt.tight_layout()
+plt.show()
 
 lr = LogisticRegression(multi_class='ovr', random_state=1, solver = 'lbfgs')
 
