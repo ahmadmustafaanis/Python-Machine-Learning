@@ -1,5 +1,4 @@
 from sklearn.neighbors import KNeighborsClassifier
-
 import numpy as np
 from decesion_boundary import plot_decision_region
 from sklearn.datasets import load_iris

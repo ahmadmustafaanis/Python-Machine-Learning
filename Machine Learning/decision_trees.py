@@ -4,6 +4,10 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
+from pydotplus import graph_from_dot_data
+from sklearn.tree import export_graphviz
+from sklearn import tree
+
 
 iris = load_iris()
 X = iris["data"][:, [2, 3]]
@@ -27,14 +31,10 @@ plt.ylabel("Petal Width")
 plt.tight_layout()
 plt.show()
 
-from sklearn import tree
 
 tree.plot_tree(tree_model)
 plt.show()
 
-
-from pydotplus import graph_from_dot_data
-from sklearn.tree import export_graphviz
 
 dot_data = export_graphviz(
     tree_model,

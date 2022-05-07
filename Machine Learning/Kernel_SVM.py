@@ -30,9 +30,13 @@ plt.show()
 gamma = float(input("Type value of Gamma for SVM\n"))
 C = int(input("Type Value of C for SVM\n"))
 
+<<<<<<< HEAD:Kernel_SVM.py
 svm = SVC(C=C, kernel="rbf", gamma=gamma, random_state=1)
 
 svm.fit(X_xor, y_xor)
+=======
+svm.fit(X_xor,y_xor)
+>>>>>>> 1932f91746c6ca348280af77c18e94e76606e7f9:Machine Learning/Kernel_SVM.py
 plot_decision_region(X_xor, y_xor, classifier=svm)
 plt.tight_layout()
 plt.show()
