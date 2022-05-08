@@ -10,18 +10,17 @@ X, y = make_moons(n_samples=100)
 print(X.shape, y.shape)
 print()
 
-print("Number of Unique Classes", len(np.unique(y)), "\nUnique Values are", np.unique(y))
+print(
+    "Number of Unique Classes", len(np.unique(y)), "\nUnique Values are", np.unique(y)
+)
 
-kpca = KernelPCA(n_components=2, kernel='rbf', gamma=15)
+kpca = KernelPCA(n_components=2, kernel="rbf", gamma=15)
 
 X_kpca = kpca.fit_transform(X)
-plt.style.use('ggplot')
-plt.scatter(X_kpca[y==0,0], X_kpca[y==0,1],
-            color = 'red', marker='^', alpha= 0.5)
+plt.style.use("ggplot")
+plt.scatter(X_kpca[y == 0, 0], X_kpca[y == 0, 1], color="red", marker="^", alpha=0.5)
 
-plt.scatter(X_kpca[y==1,0], X_kpca[y==1,1],
-            color = 'blue', marker='o', alpha= 0.5)
-
+plt.scatter(X_kpca[y == 1, 0], X_kpca[y == 1, 1], color="blue", marker="o", alpha=0.5)
 
 
 plt.xlabel("PCA 1")
@@ -32,7 +31,7 @@ plt.show()
 
 lr = LogisticRegression()
 
-lr.fit(X_kpca,y)
+lr.fit(X_kpca, y)
 
 plot_decision_regions(X_kpca, y, lr)
 plt.xlabel("Axis 1")
